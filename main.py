@@ -4,7 +4,7 @@ from transformers import pipeline
 
 app = FastAPI()
 
-# Carregue um modelo pré-treinado (Exemplo: Sentiment Analysis)
+# modelo pré-treinado Sentiment Analysis
 sentiment_analysis = pipeline("sentiment-analysis")
 
 class TextInput(BaseModel):
@@ -27,8 +27,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ou use ["http://localhost:3000"] para restringir ao front-end
+    allow_origins=["*"],  # "http://localhost:3000"
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos os métodos HTTP, incluindo OPTIONS
-    allow_headers=["*"],  # Permite todos os cabeçalhos
+    allow_methods=["*"], 
+    allow_headers=["*"],
 )
